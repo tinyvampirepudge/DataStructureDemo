@@ -1,0 +1,11 @@
+
+6squid:S1643"Use a StringBuilder instead.(Úš¢üÿÿÿÿ
+1squid:S1643"Use a StringBuilder instead.(´Ä‰”
+6squid:S1643"Use a StringBuilder instead.(Úš¢üÿÿÿÿ
+1squid:S1643"Use a StringBuilder instead.(´Ä‰”
+fsquid:S1192"LDefine a constant instead of duplicating this literal ",value --> " 3 times.(òñ®Ñúÿÿÿÿ
+csquid:S1192"IDefine a constant instead of duplicating this literal "key --> " 3 times.(òñ®Ñúÿÿÿÿ
+Dsquid:S1066"/Merge this if statement with the enclosing one.(ì¾Äÿ
+Lsquid:S2589"7Remove this expression which always evaluates to "true"(ØÓÌÖ
+gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(©¶©ë
+Osquid:S1118":Add a private constructor to hide the implicit public one.(†îÁš

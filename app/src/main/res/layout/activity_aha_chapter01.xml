@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tongtong.tiny.datastructureapplication.aha.chapter01.AHaChapter01Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_test1"
+            style="@style/btn_style_lower"
+            android:text="最快最简单的排序——桶排序"/>
+
+        <Button
+            android:id="@+id/btn_test2"
+            style="@style/btn_style_lower"
+            android:text="邻居好说话——冒泡排序"/>
+
+        <Button
+            android:id="@+id/btn_test3"
+            style="@style/btn_style_lower"
+            android:text="最常用的排序——快速排序"/>
+    </LinearLayout>
+</ScrollView>
