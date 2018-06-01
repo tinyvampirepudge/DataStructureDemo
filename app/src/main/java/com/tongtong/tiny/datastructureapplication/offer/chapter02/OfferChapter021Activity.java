@@ -13,12 +13,13 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Desc: 第二章 面试需要的基础知识
+ * Desc: 面试题2：实现Singleton模式
  *
  * @author tiny
- * @date 2018/6/1 下午6:51
+ * @date 2018/6/1 下午11:29
  */
-public class OfferChapter02Activity extends AppCompatActivity {
+public class OfferChapter021Activity extends AppCompatActivity {
+
     @BindView(R.id.btn_test1)
     Button btnTest1;
     @BindView(R.id.btn_test2)
@@ -37,40 +38,45 @@ public class OfferChapter02Activity extends AppCompatActivity {
     Button btnTest8;
 
     public static void actionStart(Context context) {
-        Intent starter = new Intent(context, OfferChapter02Activity.class);
+        Intent starter = new Intent(context, OfferChapter021Activity.class);
         context.startActivity(starter);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_offer_chapter02);
+        setContentView(R.layout.activity_offer_chapter021);
         ButterKnife.bind(this);
     }
 
     @OnClick(R.id.btn_test1)
     public void onBtnTest1Clicked() {
-        OfferChapter021Activity.actionStart(this);
+        Singleton1 singleton1 = Singleton1.getInstance();
     }
 
     @OnClick(R.id.btn_test2)
     public void onBtnTest2Clicked() {
+        Singleton2 singleton2 = Singleton2.getInstance();
     }
 
     @OnClick(R.id.btn_test3)
     public void onBtnTest3Clicked() {
+        Singleton3 singleton3 = Singleton3.getInstance();
     }
 
     @OnClick(R.id.btn_test4)
     public void onBtnTest4Clicked() {
+        Singleton4 singleton4 = Singleton4.getSingleton();
     }
 
     @OnClick(R.id.btn_test5)
     public void onBtnTest5Clicked() {
+        Singleton5 singleton5 = Singleton5.getInstance();
     }
 
     @OnClick(R.id.btn_test6)
     public void onBtnTest6Clicked() {
+        Singleton6 singleton6 = Singleton6.getInstance();
     }
 
     @OnClick(R.id.btn_test7)

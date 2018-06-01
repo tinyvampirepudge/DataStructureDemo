@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".offer.chapter02.OfferChapter02Activity">
+    tools:context=".offer.chapter02.OfferChapter021Activity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,32 +18,32 @@
             <Button
                 android:id="@+id/btn_test1"
                 style="@style/btn_style_lower"
-                android:text="实现Singleton模式"/>
+                android:text="不好的解法一：只适用于单线程环境"/>
 
             <Button
                 android:id="@+id/btn_test2"
                 style="@style/btn_style_lower"
-                android:text=""/>
+                android:text="不好的解法二：\n虽然在多线程环境中能工作但效率不高"/>
 
             <Button
                 android:id="@+id/btn_test3"
                 style="@style/btn_style_lower"
-                android:text=""/>
+                android:text="可行的解法：\n加同步锁前后两次判断实例是否已存在\n但是在java中这种写法其实不是线程安全的，请参看强烈推荐的写法三"/>
 
             <Button
                 android:id="@+id/btn_test4"
                 style="@style/btn_style_lower"
-                android:text=""/>
+                android:text="强烈推荐的解法一：\n利用静态构造函数"/>
 
             <Button
                 android:id="@+id/btn_test5"
                 style="@style/btn_style_lower"
-                android:text=""/>
+                android:text="强烈推荐的解法二：实现按需创建实例"/>
 
             <Button
                 android:id="@+id/btn_test6"
                 style="@style/btn_style_lower"
-                android:text=""/>
+                android:text="强烈推荐的解法三：线程安全，解决dcl的线程不安全问题。"/>
 
             <Button
                 android:id="@+id/btn_test7"

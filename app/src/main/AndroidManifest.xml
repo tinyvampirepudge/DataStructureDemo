@@ -61,6 +61,10 @@
             android:name=".offer.chapter08.OfferChapter08Activity"
             android:label="@string/title_offer_chapter08">
         </activity>
+        <activity
+            android:name=".offer.chapter02.OfferChapter021Activity"
+            android:label="实现Singleton模式">
+        </activity>
     </application>
 
 </manifest>
