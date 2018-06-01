@@ -25,6 +25,42 @@
             android:name=".aha.chapter01.AHaChapter01Activity"
             android:label="啊哈算法 第一章，排序">
         </activity>
+        <activity
+            android:name=".offer.OfferEntryActivity"
+            android:label="剑指offer">
+        </activity>
+        <activity
+            android:name=".offer.chapter01.OfferChapter01Activity"
+            android:label="@string/title_offer_chapter01">
+        </activity>
+        <activity
+            android:name=".offer.chapter02.OfferChapter02Activity"
+            android:label="@string/title_offer_chapter02">
+        </activity>
+        <activity
+            android:name=".offer.chapter03.OfferChapter03Activity"
+            android:label="@string/title_offer_chapter03">
+        </activity>
+        <activity
+            android:name=".offer.chapter04.OfferChapter04Activity"
+            android:label="@string/title_offer_chapter04">
+        </activity>
+        <activity
+            android:name=".offer.chapter05.OfferChapter05Activity"
+            android:label="@string/title_offer_chapter05">
+        </activity>
+        <activity
+            android:name=".offer.chapter06.OfferChapter06Activity"
+            android:label="@string/title_offer_chapter06">
+        </activity>
+        <activity
+            android:name=".offer.chapter07.OfferChapter07Activity"
+            android:label="@string/title_offer_chapter07">
+        </activity>
+        <activity
+            android:name=".offer.chapter08.OfferChapter08Activity"
+            android:label="@string/title_offer_chapter08">
+        </activity>
     </application>
 
 </manifest>
