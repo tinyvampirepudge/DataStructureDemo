@@ -55,6 +55,7 @@ public class OfferChapter02Activity extends AppCompatActivity {
 
     @OnClick(R.id.btn_test2)
     public void onBtnTest2Clicked() {
+        OfferChapter022Activity.actionStart(this);
     }
 
     @OnClick(R.id.btn_test3)
