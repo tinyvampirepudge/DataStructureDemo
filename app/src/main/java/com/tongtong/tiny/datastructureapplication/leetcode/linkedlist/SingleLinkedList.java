@@ -2,6 +2,8 @@ package com.tongtong.tiny.datastructureapplication.leetcode.linkedlist;
 
 import org.w3c.dom.Node;
 
+import java.security.PublicKey;
+
 /**
  * @Description: 单链表，提供简单的增删改查方法，不考虑并发情况。
  * @Author wangjianzhou@qding.me
@@ -23,10 +25,11 @@ public class SingleLinkedList {
 
     public static void main(String[] args) {
         SingleLinkedList sll = new SingleLinkedList();
-        for (int i = 0; i < 10; i++) {
-            sll.add(i, i);
-        }
-        sll.add(11,100);
+//        for (int i = 0; i < 10; i++) {
+//            sll.add(i, i);
+//        }
+//        sll.add(0, 100);
+        sll.addLast(1111);
         System.out.println(sll.toString());
     }
 
@@ -61,6 +64,14 @@ public class SingleLinkedList {
         }
         size++;
         return true;
+    }
+
+    public boolean addFirst(int value) {
+        return add(0, value);
+    }
+
+    public boolean addLast(int value) {
+        return add(getSize(), value);
     }
 
     public boolean remove(int index) {
@@ -105,7 +116,7 @@ public class SingleLinkedList {
             Node curr = first;
             while (curr != null) {
                 sb.append(String.valueOf(curr));
-                if (curr.next!=null){
+                if (curr.next != null) {
                     sb.append(",").append(" ");
                 }
                 curr = curr.next;
