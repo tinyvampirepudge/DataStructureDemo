@@ -2,10 +2,11 @@ package com.tongtong.tiny.datastructureapplication.leetcode.linkedlist;
 
 import org.w3c.dom.Node;
 
-import java.security.PublicKey;
+import java.util.LinkedList;
 
 /**
  * @Description: 单链表，提供简单的增删改查方法，不考虑并发情况。
+ * 参考LinkedList
  * @Author wangjianzhou@qding.me
  * @Date 2018/10/26 2:38 PM
  * @Version TODO
@@ -17,10 +18,10 @@ public class SingleLinkedList {
 
     /**
      * 增删改查方法
-     * add(index, E)
-     * remove(index)
-     * set(index, E)
-     * get(index)
+     * add(index, E)        index >= 0 && index <= size
+     * remove(index)        index >= 0 && index < size
+     * set(index, E)        index >= 0 && index < size
+     * get(index)           index >= 0 && index < size
      */
 
     public static void main(String[] args) {
@@ -28,9 +29,23 @@ public class SingleLinkedList {
 //        for (int i = 0; i < 10; i++) {
 //            sll.add(i, i);
 //        }
-//        sll.add(0, 100);
-        sll.addLast(1111);
+//        sll.add(0,100);
+//        sll.addFirst(111);
+//        sll.set(9, 1111);
+        sll.remove(0);
         System.out.println(sll.toString());
+//        System.out.println(sll.getFirst());
+//        System.out.println(sll.getLast());
+//        System.out.println(sll.get(0));
+//        System.out.println(sll.get(sll.getSize()-1));
+
+//        LinkedList<String> linkedList = new LinkedList<>();
+//        linkedList.add("111");
+//        linkedList.add("222");
+//        linkedList.add("333");
+//        linkedList.remove(0);
+//        linkedList.addLast("sss");
+//        System.out.println(linkedList.toString());
     }
 
     /**
@@ -41,13 +56,7 @@ public class SingleLinkedList {
      * @return
      */
     public boolean add(int index, int value) {
-        if (index < 0) {
-            throw new IllegalArgumentException("index cannot be less than 0!");
-        }
-
-        if (getSize() < index) {
-            return false;
-        }
+        checkPositionIndex(index);
 
         if (index == 0) {
             if (first == null) {
@@ -66,6 +75,10 @@ public class SingleLinkedList {
         return true;
     }
 
+    public boolean add(int value) {
+        return addLast(value);
+    }
+
     public boolean addFirst(int value) {
         return add(0, value);
     }
@@ -75,10 +88,29 @@ public class SingleLinkedList {
     }
 
     public boolean remove(int index) {
+        checkElementIndex(index);
+
+        // size > 0
+        if (getSize() == 1) {//size == 1
+            first = null;
+        } else {// size > 1
+            if (index == 0) {// 删除第一个数据
+                first = first.next;
+            } else if (getSize() - 1 == index) {// 删除最后一个数据
+                Node prev = get(index - 1);
+                prev.next = null;
+            } else {// 删除中间的数据
+                get(index - 1).next = get(index).next;
+            }
+        }
+        size--;
         return true;
     }
 
     public boolean set(int index, int value) {
+        checkElementIndex(index);
+        Node node = get(index);
+        node.setItem(value);
         return true;
     }
 
@@ -89,13 +121,7 @@ public class SingleLinkedList {
      * @return
      */
     public Node get(int index) {
-        if (index < 0) {
-            throw new IllegalArgumentException("index cannot be less than 0!");
-        }
-
-        if (getSize() <= index) {
-            return null;
-        }
+        checkElementIndex(index);
 
         Node x = first;
         for (int i = 0; i < index; i++) {
@@ -104,8 +130,54 @@ public class SingleLinkedList {
         return x;
     }
 
+    public Node getFirst() {
+        return first;
+    }
+
+    public Node getLast() {
+        if (getSize() == 0) {
+            return first;
+        }
+        return get(getSize() - 1);
+    }
+
+
     public int getSize() {
         return size;
+    }
+
+    /**
+     * Tells if the argument is the index of an existing element.
+     */
+    private boolean isElementIndex(int index) {
+        return index >= 0 && index < size;
+    }
+
+    /**
+     * Tells if the argument is the index of a valid position for an
+     * iterator or an add operation.
+     */
+    private boolean isPositionIndex(int index) {
+        return index >= 0 && index <= size;
+    }
+
+    /**
+     * Constructs an IndexOutOfBoundsException detail message.
+     * Of the many possible refactorings of the error handling code,
+     * this "outlining" performs best with both server and client VMs.
+     */
+    private String outOfBoundsMsg(int index) {
+        return "Index: " + index + ", Size: " + size;
+    }
+
+    private void checkElementIndex(int index) {
+        if (!isElementIndex(index))
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+    }
+
+    private void checkPositionIndex(int index) {
+        if (!isPositionIndex(index))
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
     }
 
     @Override
@@ -133,6 +205,10 @@ public class SingleLinkedList {
         public Node(int item, Node next) {
             this.item = item;
             this.next = next;
+        }
+
+        public void setItem(int item) {
+            this.item = item;
         }
 
         @Override
