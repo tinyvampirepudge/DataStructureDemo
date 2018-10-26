@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.tongtong.tiny.datastructureapplication"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tongtong.tiny.datastructureapplication">
 
     <application
         android:name=".app.MyApplication"
@@ -12,63 +12,56 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".aha.AHaArithmeticActivity"
-            android:label="啊哈算法入口">
-        </activity>
+            android:label="啊哈算法入口" />
         <activity
             android:name=".aha.chapter01.AHaChapter01Activity"
-            android:label="啊哈算法 第一章，排序">
-        </activity>
+            android:label="啊哈算法 第一章，排序" />
         <activity
             android:name=".offer.OfferEntryActivity"
-            android:label="剑指offer">
-        </activity>
+            android:label="剑指offer" />
         <activity
             android:name=".offer.chapter01.OfferChapter01Activity"
-            android:label="@string/title_offer_chapter01">
-        </activity>
+            android:label="@string/title_offer_chapter01" />
         <activity
             android:name=".offer.chapter02.OfferChapter02Activity"
-            android:label="@string/title_offer_chapter02">
-        </activity>
+            android:label="@string/title_offer_chapter02" />
         <activity
             android:name=".offer.chapter03.OfferChapter03Activity"
-            android:label="@string/title_offer_chapter03">
-        </activity>
+            android:label="@string/title_offer_chapter03" />
         <activity
             android:name=".offer.chapter04.OfferChapter04Activity"
-            android:label="@string/title_offer_chapter04">
-        </activity>
+            android:label="@string/title_offer_chapter04" />
         <activity
             android:name=".offer.chapter05.OfferChapter05Activity"
-            android:label="@string/title_offer_chapter05">
-        </activity>
+            android:label="@string/title_offer_chapter05" />
         <activity
             android:name=".offer.chapter06.OfferChapter06Activity"
-            android:label="@string/title_offer_chapter06">
-        </activity>
+            android:label="@string/title_offer_chapter06" />
         <activity
             android:name=".offer.chapter07.OfferChapter07Activity"
-            android:label="@string/title_offer_chapter07">
-        </activity>
+            android:label="@string/title_offer_chapter07" />
         <activity
             android:name=".offer.chapter08.OfferChapter08Activity"
-            android:label="@string/title_offer_chapter08">
-        </activity>
+            android:label="@string/title_offer_chapter08" />
         <activity
             android:name=".offer.chapter02.OfferChapter021Activity"
-            android:label="实现Singleton模式">
-        </activity>
+            android:label="实现Singleton模式" />
         <activity
             android:name=".offer.chapter02.OfferChapter022Activity"
-            android:label="面试题3：二维数组中的查找">
-        </activity>
+            android:label="面试题3：二维数组中的查找" />
+        <activity
+            android:name=".leetcode.LeetCodeEntryActivity"
+            android:label="LeetCode代码练习" />
+        <activity
+            android:name=".leetcode.linkedlist.LinkedListActivity"
+            android:label="链表相关操作" />
     </application>
 
 </manifest>

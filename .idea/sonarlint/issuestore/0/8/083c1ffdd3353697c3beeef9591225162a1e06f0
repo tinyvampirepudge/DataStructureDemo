@@ -1,6 +1,0 @@
-
-^squid:S1192"IDefine a constant instead of duplicating this literal "GMT+8:00" 5 times.(’ÆÐ–
-_squid:S1192"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 4 times.(¬ü¯-
-ysquid:S1488"_Immediately return this expression instead of assigning it to the temporary variable "maxDays".(ùì”§üÿÿÿÿ
-Osquid:S1118":Add a private constructor to hide the implicit public one.(Ò®ÜÄ
-Osquid:S2209"5Change this instance-reference to a static reference.(ùì”§üÿÿÿÿ

@@ -1,71 +1,0 @@
-
-6squid:S1643"Use a StringBuilder instead.(¦í°—øÿÿÿÿ
-.squid:S2178"Correct this "&" to "&&".(½•äí
-msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Ô×ÒÖøÿÿÿÿ
-msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ØòıÃşÿÿÿÿ
-msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(êÃŞşÿÿÿÿ
-msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(°ÿ‘ïùÿÿÿÿ
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(˜ä¨…
-msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¼Ù¤Ñûÿÿÿÿ
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Âıù¾
-hsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(‘ĞçÈ
-msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(êÒÔ’úÿÿÿÿ
-Lsquid:S1197"8Move the array designator from the variable to the type.(£Î†T
-isquid:S1192"TDefine a constant instead of duplicating this literal "yyyy-MM-dd HH:mm:ss" 3 times.(ÿò¾¹
-`squid:S1192"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 4 times.(†³¦
-`squid:S1192"FDefine a constant instead of duplicating this literal "HH:mm" 3 times.(âğ¢ƒúÿÿÿÿ
-Ksquid:S1068"1Remove this unused "dateFormater2" private field.(êÒÔ’úÿÿÿÿ
-nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¬ŠÃø
-nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¢“ïÆ
-ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(çâîÀıÿÿÿÿ
-~squid:S4144"dUpdate this method so that its implementation is not identical to "getHideCenterString" on line 923.(õ–úøÿÿÿÿ
-Dsquid:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÀÛ«¬øÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ƒõãƒûÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÊúÈõ
-M
-squid:S106"9Replace this use of System.out or System.err by a logger.(ğÂè‚
-}squid:S1488"cImmediately return this expression instead of assigning it to the temporary variable "strTimeDesc".(‘ï³€ûÿÿÿÿ
-}squid:S1488"cImmediately return this expression instead of assigning it to the temporary variable "strTimeDesc".(ê·ó½ıÿÿÿÿ
-xsquid:S1488"cImmediately return this expression instead of assigning it to the temporary variable "strTimeDesc".(š›¤°
-}squid:S1488"cImmediately return this expression instead of assigning it to the temporary variable "strTimeDesc".(Çš¾¢üÿÿÿÿ
-xsquid:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(ãƒ¨¤ıÿÿÿÿ
-xsquid:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(ãƒ¨¤ıÿÿÿÿ
-tsquid:S1488"_Immediately return this expression instead of assigning it to the temporary variable "version".(£ÈìÜ
-}squid:S1488"cImmediately return this expression instead of assigning it to the temporary variable "versionCode".(®Î½Êûÿÿÿÿ
-vsquid:S1488"\Immediately return this expression instead of assigning it to the temporary variable "data".(…è¸ıÿÿÿÿÿ
-Qsquid:S2589"7Remove this expression which always evaluates to "true"(„ƒÜ¥ıÿÿÿÿ
-[squid:S4065"FReplace this anonymous class with a call to "ThreadLocal.withInitial".(‘ĞçÈ
-`squid:S4065"FReplace this anonymous class with a call to "ThreadLocal.withInitial".(êÒÔ’úÿÿÿÿ
-Esquid:S1481"0Remove this unused "versionName" local variable.(îµæ
-Osquid:S1481"5Remove this unused "mediumDateFormat" local variable.(ÍÉïÙÿÿÿÿÿ
-Dsquid:S1481"*Remove this unused "appid" local variable.(•£Èşÿÿÿÿ
-Esquid:S1481"+Remove this unused "secret" local variable.(Îµ÷éüÿÿÿÿ
-Osquid:S1118":Add a private constructor to hide the implicit public one.(§Á¡Œ
-isquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÃŒÈùÿÿÿÿ
-isquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì«ûøøÿÿÿÿ
-dsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚşÖ£
-dsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æäñâ
-isquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ïé©øÿÿÿÿ
-isquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¤Õ®üÿÿÿÿ
-Esquid:S1172"+Remove this unused method parameter "time".(ûô¾ôşÿÿÿÿ
-@squid:S1168"+Return an empty collection instead of null.(¥¹ï
-?squid:S00108")Either remove or fill this block of code.(”ı¾
-?squid:S00108")Either remove or fill this block of code.(”ı¾
-?squid:S00108")Either remove or fill this block of code.(”ı¾
-?squid:S00108")Either remove or fill this block of code.(”ı¾
-Dsquid:S00108")Either remove or fill this block of code.(†èìşÿÿÿÿ
-Dsquid:S00108")Either remove or fill this block of code.(±Ÿ—±ÿÿÿÿÿ
-asquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Üû·˜ıÿÿÿÿ
-asquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(íÊêûÿÿÿÿ
-Tsquid:S1854"?Remove this useless assignment to local variable "versionName".(îµæ
-^squid:S1854"DRemove this useless assignment to local variable "mediumDateFormat".(ÍÉïÙÿÿÿÿÿ
-Tsquid:S1854":Remove this useless assignment to local variable "secret".(Îµ÷éüÿÿÿÿ
-Ssquid:S1854"9Remove this useless assignment to local variable "appid".(•£Èşÿÿÿÿ
-lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä’×–ûÿÿÿÿ
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-8squid:S1148"#Use a logger to log this exception.(Ç’Çê
-tsquid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
-5squid:S2129" Remove this "String" constructor(……×¥

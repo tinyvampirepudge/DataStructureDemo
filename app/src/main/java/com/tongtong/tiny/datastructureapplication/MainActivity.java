@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tongtong.tiny.datastructureapplication.aha.AHaArithmeticActivity;
+import com.tongtong.tiny.datastructureapplication.leetcode.LeetCodeEntryActivity;
 import com.tongtong.tiny.datastructureapplication.offer.OfferEntryActivity;
 
 import butterknife.BindView;
@@ -39,5 +40,11 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_test2)
     public void onBtnTest2Clicked() {
         OfferEntryActivity.actionStart(this);
+    }
+
+
+    @OnClick(R.id.btn_test3)
+    public void onBtnTest3Clicked() {
+        LeetCodeEntryActivity.actionStart(this);
     }
 }
