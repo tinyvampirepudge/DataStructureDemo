@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.tongtong.tiny.datastructureapplication.R;
 
+import org.w3c.dom.Node;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -31,16 +33,13 @@ public class LinkedListActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_test1)
     public void onBtnTest1Clicked() {
-
+        SingleLinkedList sll = new SingleLinkedList();
+        for (int i = 0; i < 10; i++) {
+            sll.add(i, i);
+        }
+        System.out.println(sll.toString());
+        sll.reverseList();
     }
-
-    private SingleLinkedList reverseSingleList(SingleLinkedList head){
-        if (head == null)
-            return null;
-
-        return null;
-    }
-
 
     @OnClick(R.id.btn_test2)
     public void onBtnTest2Clicked() {

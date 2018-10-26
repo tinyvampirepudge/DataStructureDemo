@@ -1,9 +1,5 @@
 package com.tongtong.tiny.datastructureapplication.leetcode.linkedlist;
 
-import org.w3c.dom.Node;
-
-import java.util.LinkedList;
-
 /**
  * @Description: 单链表，提供简单的增删改查方法，不考虑并发情况。
  * 参考LinkedList
@@ -26,14 +22,15 @@ public class SingleLinkedList {
 
     public static void main(String[] args) {
         SingleLinkedList sll = new SingleLinkedList();
-//        for (int i = 0; i < 10; i++) {
-//            sll.add(i, i);
-//        }
-//        sll.add(0,100);
+        for (int i = 0; i < 10; i++) {
+            sll.add(i, i);
+        }
+//        sll.add(0, 100);
 //        sll.addFirst(111);
 //        sll.set(9, 1111);
-        sll.remove(0);
+//        sll.remove(0);
         System.out.println(sll.toString());
+        sll.reverseList();
 //        System.out.println(sll.getFirst());
 //        System.out.println(sll.getLast());
 //        System.out.println(sll.get(0));
@@ -142,8 +139,54 @@ public class SingleLinkedList {
     }
 
 
+    /**
+     * 返回当前容器大小。
+     * @return
+     */
     public int getSize() {
         return size;
+    }
+
+    /**
+     * 反转链表
+     *
+     * @return
+     */
+    public Node reverseList() {
+        Node prev = null;
+        Node curr = first;
+        while (curr != null) {
+            Node temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        logFromHead("reverseList", prev);
+        return prev;
+    }
+
+    public void logFromHead(Node head) {
+        logFromHead(null, head);
+    }
+
+    public void logFromHead(String tag, Node head) {
+        StringBuilder sb = new StringBuilder();
+        if (tag != null && tag.length() > 0) {
+            sb.append(tag + ":");
+        }
+        sb.append('[');
+        if (head != null) {
+            Node curr = head;
+            while (curr != null) {
+                sb.append(String.valueOf(curr));
+                if (curr.next != null) {
+                    sb.append(",").append(" ");
+                }
+                curr = curr.next;
+            }
+        }
+        sb.append("]");
+        System.out.println(sb.toString());
     }
 
     /**
