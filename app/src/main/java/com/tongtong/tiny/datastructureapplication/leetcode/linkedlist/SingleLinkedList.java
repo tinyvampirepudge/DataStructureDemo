@@ -1,5 +1,8 @@
 package com.tongtong.tiny.datastructureapplication.leetcode.linkedlist;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @Description: 单链表，提供简单的增删改查方法，不考虑并发情况。
  * 参考LinkedList
@@ -21,16 +24,16 @@ public class SingleLinkedList {
      */
 
     public static void main(String[] args) {
-        SingleLinkedList sll = new SingleLinkedList();
-        for (int i = 0; i < 10; i++) {
-            sll.add(i, i);
-        }
+//        SingleLinkedList sll = new SingleLinkedList();
+//        for (int i = 0; i < 10; i++) {
+//            sll.add(i, i);
+//        }
 //        sll.add(0, 100);
 //        sll.addFirst(111);
 //        sll.set(9, 1111);
 //        sll.remove(0);
-        System.out.println(sll.toString());
-        sll.reverseList();
+//        System.out.println(sll.toString());
+//        sll.reverseList();
 //        System.out.println(sll.getFirst());
 //        System.out.println(sll.getLast());
 //        System.out.println(sll.get(0));
@@ -43,6 +46,35 @@ public class SingleLinkedList {
 //        linkedList.remove(0);
 //        linkedList.addLast("sss");
 //        System.out.println(linkedList.toString());
+
+        // 循环链表
+        SingleLinkedList sll = new SingleLinkedList();
+        SingleNode head = new SingleNode(0, null);
+        sll.add(head);
+        for (int i = 1; i < 10; i++) {
+            SingleNode node = new SingleNode(i, null);
+            sll.add(node);
+        }
+        SingleNode sn = new SingleNode(111, null);
+        sll.add(sn);
+        for (int i = 10; i < 20; i++) {
+            SingleNode node = new SingleNode(i, null);
+            sll.add(node);
+        }
+        // 最后一个结点的next指向之前添加的某个结点。
+        SingleNode last = new SingleNode(222, sn);
+        sll.add(last);
+
+        // 判断单向链表中是否有环
+//        Boolean isCycle = sll.hasCycleByHashSet(head);
+        Boolean isCycle = sll.hasCycleByTowPointers(head);
+        if (isCycle) {
+            System.out.println("is Cycle");
+            sll.logCycle("cycle");
+        } else {
+            System.out.println("is not Cycle");
+            System.out.println(sll.toString());
+        }
     }
 
     /**
@@ -74,6 +106,38 @@ public class SingleLinkedList {
 
     public boolean add(int value) {
         return addLast(value);
+    }
+
+    /**
+     * 向链表末尾添加结点
+     *
+     * @param node 结点的next指向为null，表示尾结点。
+     * @return
+     */
+    public boolean add(SingleNode node) {
+        if (first == null) {
+            first = node;
+        } else {
+            SingleNode last = get(getSize() - 1);
+            last.next = node;
+        }
+        size++;
+        return true;
+    }
+
+    /**
+     * 末尾添加一个特殊结点，形成一个环，为了测试用。
+     *
+     * @param node 这个node的next指向单项链表中已经存在的结点。
+     * @return
+     */
+    public boolean addCycleNode(SingleNode node) {
+        if (getSize() < 2) {
+            return false;
+        }
+        SingleNode last = get(getSize() - 1);
+        last.next = node;
+        return true;
     }
 
     public boolean addFirst(int value) {
@@ -141,6 +205,7 @@ public class SingleLinkedList {
 
     /**
      * 返回当前容器大小。
+     *
      * @return
      */
     public int getSize() {
@@ -165,11 +230,100 @@ public class SingleLinkedList {
         return prev;
     }
 
+    /**
+     * 判断单链表中是否有环
+     * 借助HashSet来判断。
+     *
+     * @param head
+     * @return
+     */
+    public boolean hasCycleByHashSet(SingleNode head) {
+        Set<SingleNode> set = new HashSet<>();
+        SingleNode node = head;
+        while (node != null) {
+            if (set.contains(node)) {
+                return true;
+            } else {
+                set.add(node);
+            }
+            node = node.next;
+        }
+        return false;
+    }
+
+    /**
+     * 判断单链表中是否有环
+     * 借助快慢指针来判断。
+     *
+     * @param head
+     * @return
+     */
+    public boolean hasCycleByTowPointers(SingleNode head) {
+        // 排除无数据或者只有一个数据且无闭环的情况
+        if (head == null || head.next == null){
+            return false;
+        }
+        SingleNode slow =  head;
+        SingleNode fast = head.next;
+        while(slow != fast){
+            // 判断快指针结点是否为null，如果为null，则说明到达单向链表的结尾了。
+            if(fast == null || fast.next == null){
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
+
+    /**
+     * 打印循环链表，需要添加停止条件。
+     *
+     * @param tag
+     */
+    public void logCycle(String tag) {
+        StringBuilder sb = new StringBuilder();
+        if (tag != null && tag.length() > 0) {
+            sb.append(tag + ":");
+        }
+        sb.append('[');
+        if (first != null) {
+            SingleNode curr = first;
+            int count = 0;
+            int limit = getSize();
+            while (curr != null && count <= limit) {
+                sb.append(String.valueOf(curr));
+                if (curr.next != null && count < limit) {
+                    sb.append(",").append(" ");
+                }
+                curr = curr.next;
+                count++;
+            }
+        }
+        sb.append("]");
+        System.out.println(sb.toString());
+    }
+
+    /**
+     * 根据单向链表的head结点，依次打印单向链表中各个节点的值。
+     *
+     * @param head
+     */
     public void logFromHead(SingleNode head) {
         logFromHead(null, head);
     }
 
+    /**
+     * 根据单向链表的head结点，依次打印单向链表中各个节点的值。
+     *
+     * @param tag
+     * @param head
+     */
     public void logFromHead(String tag, SingleNode head) {
+        System.out.println(getToString(tag, head));
+    }
+
+    public String getToString(String tag, SingleNode head) {
         StringBuilder sb = new StringBuilder();
         if (tag != null && tag.length() > 0) {
             sb.append(tag + ":");
@@ -186,7 +340,7 @@ public class SingleLinkedList {
             }
         }
         sb.append("]");
-        System.out.println(sb.toString());
+        return sb.toString();
     }
 
     /**
@@ -225,20 +379,7 @@ public class SingleLinkedList {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append('[');
-        if (first != null) {
-            SingleNode curr = first;
-            while (curr != null) {
-                sb.append(String.valueOf(curr));
-                if (curr.next != null) {
-                    sb.append(",").append(" ");
-                }
-                curr = curr.next;
-            }
-        }
-        sb.append("]");
-        return sb.toString();
+        return getToString(SingleLinkedList.class.getSimpleName(), first);
     }
 
 }

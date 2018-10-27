@@ -19,6 +19,10 @@ public class SingleNode {
         this.item = item;
     }
 
+    public int getItem() {
+        return item;
+    }
+
     @Override
     public String toString() {
         return String.valueOf(this.item);
