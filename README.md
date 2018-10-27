@@ -18,3 +18,6 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 ### LeetCode
 1、Java实现单链表，支持增删改查。
 
+2、单向链表反转
+
+3、单向链表是否有环
