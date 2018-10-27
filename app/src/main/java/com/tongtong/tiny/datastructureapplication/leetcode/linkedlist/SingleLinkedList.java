@@ -10,7 +10,7 @@ package com.tongtong.tiny.datastructureapplication.leetcode.linkedlist;
 public class SingleLinkedList {
 
     private int size = 0;
-    private Node first = null;
+    private SingleNode first = null;
 
     /**
      * 增删改查方法
@@ -57,16 +57,16 @@ public class SingleLinkedList {
 
         if (index == 0) {
             if (first == null) {
-                first = new Node(value, null);
+                first = new SingleNode(value, null);
             } else {
-                Node next = get(0);
-                Node node = new Node(value, next);
-                first = node;
+                SingleNode next = get(0);
+                SingleNode singleNode = new SingleNode(value, next);
+                first = singleNode;
             }
         } else {
-            Node prev = get(index - 1);
-            Node node = new Node(value, prev.next);
-            prev.next = node;
+            SingleNode prev = get(index - 1);
+            SingleNode singleNode = new SingleNode(value, prev.next);
+            prev.next = singleNode;
         }
         size++;
         return true;
@@ -94,7 +94,7 @@ public class SingleLinkedList {
             if (index == 0) {// 删除第一个数据
                 first = first.next;
             } else if (getSize() - 1 == index) {// 删除最后一个数据
-                Node prev = get(index - 1);
+                SingleNode prev = get(index - 1);
                 prev.next = null;
             } else {// 删除中间的数据
                 get(index - 1).next = get(index).next;
@@ -106,8 +106,8 @@ public class SingleLinkedList {
 
     public boolean set(int index, int value) {
         checkElementIndex(index);
-        Node node = get(index);
-        node.setItem(value);
+        SingleNode singleNode = get(index);
+        singleNode.setItem(value);
         return true;
     }
 
@@ -117,21 +117,21 @@ public class SingleLinkedList {
      * @param index
      * @return
      */
-    public Node get(int index) {
+    public SingleNode get(int index) {
         checkElementIndex(index);
 
-        Node x = first;
+        SingleNode x = first;
         for (int i = 0; i < index; i++) {
             x = x.next;
         }
         return x;
     }
 
-    public Node getFirst() {
+    public SingleNode getFirst() {
         return first;
     }
 
-    public Node getLast() {
+    public SingleNode getLast() {
         if (getSize() == 0) {
             return first;
         }
@@ -152,11 +152,11 @@ public class SingleLinkedList {
      *
      * @return
      */
-    public Node reverseList() {
-        Node prev = null;
-        Node curr = first;
+    public SingleNode reverseList() {
+        SingleNode prev = null;
+        SingleNode curr = first;
         while (curr != null) {
-            Node temp = curr.next;
+            SingleNode temp = curr.next;
             curr.next = prev;
             prev = curr;
             curr = temp;
@@ -165,18 +165,18 @@ public class SingleLinkedList {
         return prev;
     }
 
-    public void logFromHead(Node head) {
+    public void logFromHead(SingleNode head) {
         logFromHead(null, head);
     }
 
-    public void logFromHead(String tag, Node head) {
+    public void logFromHead(String tag, SingleNode head) {
         StringBuilder sb = new StringBuilder();
         if (tag != null && tag.length() > 0) {
             sb.append(tag + ":");
         }
         sb.append('[');
         if (head != null) {
-            Node curr = head;
+            SingleNode curr = head;
             while (curr != null) {
                 sb.append(String.valueOf(curr));
                 if (curr.next != null) {
@@ -228,7 +228,7 @@ public class SingleLinkedList {
         StringBuilder sb = new StringBuilder();
         sb.append('[');
         if (first != null) {
-            Node curr = first;
+            SingleNode curr = first;
             while (curr != null) {
                 sb.append(String.valueOf(curr));
                 if (curr.next != null) {
@@ -239,25 +239,6 @@ public class SingleLinkedList {
         }
         sb.append("]");
         return sb.toString();
-    }
-
-    private static class Node {
-        private int item;
-        private Node next;
-
-        public Node(int item, Node next) {
-            this.item = item;
-            this.next = next;
-        }
-
-        public void setItem(int item) {
-            this.item = item;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(this.item);
-        }
     }
 
 }
