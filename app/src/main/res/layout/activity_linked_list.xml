@@ -18,12 +18,12 @@
         <Button
             android:id="@+id/btn_test2"
             style="@style/btn_style_lower"
-            android:text="——"/>
+            android:text="单向链表是否有环"/>
 
         <Button
             android:id="@+id/btn_test3"
             style="@style/btn_style_lower"
-            android:text="——"/>
+            android:text="合并两个有序链表"/>
 
     </LinearLayout>
 

@@ -77,5 +77,39 @@ public class LinkedListActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_test3)
     public void onBtnTest3Clicked() {
+        SingleLinkedList sll1 = new SingleLinkedList();
+        for (int i = 0; i < 10; i += 2) {
+            SingleNode node = new SingleNode(i, null);
+            sll1.add(node);
+        }
+        System.out.println("单向链表1：" + sll1.toString());
+
+        SingleLinkedList sll2 = new SingleLinkedList();
+        for (int i = 1; i < 12; i += 2) {
+            SingleNode node = new SingleNode(i, null);
+            sll2.add(node);
+        }
+        System.out.println("单向链表2：" + sll2.toString());
+
+        SingleNode mergedNode = mergeTwoLists(sll1.getFirst(), sll2.getFirst());
+        sll1.logFromHead("mergedNode", mergedNode);
+    }
+
+    public SingleNode mergeTwoLists(SingleNode l1, SingleNode l2) {
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
+        SingleNode mergedNode;
+        if (l1.getItem() < l2.getItem()) {
+            mergedNode = l1;
+            mergedNode.next = mergeTwoLists(l1.next, l2);
+        } else {
+            mergedNode = l2;
+            mergedNode.next = mergeTwoLists(l2.next, l1);
+        }
+        return mergedNode;
     }
 }
