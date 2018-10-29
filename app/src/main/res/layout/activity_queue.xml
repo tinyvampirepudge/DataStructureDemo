@@ -4,27 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".leetcode.LeetCodeEntryActivity">
+    tools:context=".leetcode.queue.QueueActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_test1"
             style="@style/btn_style_lower"
-            android:text="链表 Linked List"/>
+            android:text="顺序队列" />
 
         <Button
             android:id="@+id/btn_test2"
             style="@style/btn_style_lower"
-            android:text="栈 Stack"/>
+            android:text="链式队列" />
 
         <Button
             android:id="@+id/btn_test3"
             style="@style/btn_style_lower"
-            android:text="队列 queue"/>
+            android:text="——" />
+
+        <Button
+            android:id="@+id/btn_test4"
+            style="@style/btn_style_lower"
+            android:text="——" />
 
     </LinearLayout>
 

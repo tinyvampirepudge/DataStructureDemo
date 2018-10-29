@@ -64,7 +64,10 @@
             android:label="算法练习——链表" />
         <activity
             android:name=".leetcode.stack.StackActivity"
-            android:label="LeetCode——栈" />
+            android:label="算法练习——栈" />
+        <activity
+            android:name=".leetcode.queue.QueueActivity"
+            android:label="算法练习——队列" />
     </application>
 
 </manifest>
