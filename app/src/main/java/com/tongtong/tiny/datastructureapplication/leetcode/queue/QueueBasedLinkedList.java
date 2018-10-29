@@ -1,7 +1,5 @@
 package com.tongtong.tiny.datastructureapplication.leetcode.queue;
 
-import org.w3c.dom.Node;
-
 /**
  * @Description: 链式队列
  * @Author wangjianzhou@qding.me

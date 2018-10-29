@@ -63,7 +63,7 @@ public class QueueBasedArray implements QueueInterface {
     @Override
     public String dequeue() {
         // 如果 head == tail 表示队列为空
-        if (0 == tail) {
+        if (head == tail) {
             return null;
         }
         String result = values[head];
