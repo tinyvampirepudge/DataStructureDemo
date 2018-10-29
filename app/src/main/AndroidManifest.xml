@@ -61,7 +61,10 @@
             android:label="LeetCode代码练习" />
         <activity
             android:name=".leetcode.linkedlist.LinkedListActivity"
-            android:label="链表相关操作" />
+            android:label="算法练习——链表" />
+        <activity
+            android:name=".leetcode.stack.StackActivity"
+            android:label="LeetCode——栈" />
     </application>
 
 </manifest>

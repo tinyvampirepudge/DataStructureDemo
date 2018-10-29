@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".leetcode.LeetCodeEntryActivity">
+    tools:context=".leetcode.stack.StackActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,17 +14,17 @@
         <Button
             android:id="@+id/btn_test1"
             style="@style/btn_style_lower"
-            android:text="链表 Linked List"/>
+            android:text="自定义栈——顺序栈"/>
 
         <Button
             android:id="@+id/btn_test2"
             style="@style/btn_style_lower"
-            android:text="栈 Stack"/>
+            android:text="自定义栈——链表栈"/>
 
         <Button
             android:id="@+id/btn_test3"
             style="@style/btn_style_lower"
-            android:text="--"/>
+            android:text="——"/>
 
     </LinearLayout>
 

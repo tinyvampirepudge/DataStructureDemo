@@ -16,6 +16,8 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 ### 剑指Offer
 
 ### LeetCode
+一、链表
+
 1、Java实现单链表，支持增删改查。
 
 2、单向链表反转
@@ -27,3 +29,7 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 5、删除链表倒数第 n 个结点
 
 6、求单向链表的中间结点
+
+二、栈
+
+1、Java实现顺序栈、链式栈

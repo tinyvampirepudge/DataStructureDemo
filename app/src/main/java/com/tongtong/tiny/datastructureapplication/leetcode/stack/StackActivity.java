@@ -1,4 +1,4 @@
-package com.tongtong.tiny.datastructureapplication.leetcode;
+package com.tongtong.tiny.datastructureapplication.leetcode.stack;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,39 +6,41 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tongtong.tiny.datastructureapplication.R;
-import com.tongtong.tiny.datastructureapplication.leetcode.linkedlist.LinkedListActivity;
-import com.tongtong.tiny.datastructureapplication.leetcode.stack.StackActivity;
 
-/**
- * @Description: LeetCode练习
- * https://leetcode.com/problemset/all/
- * @Author wangjianzhou@qding.me
- * @Date 2018/10/26 2:11 PM
- * @Version TODO
- */import butterknife.ButterKnife;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LeetCodeEntryActivity extends AppCompatActivity {
+/**
+ * @Description: 栈相关操作
+ *
+ * @Author wangjianzhou@qding.me
+ * @Date 2018/10/29 10:36 AM
+ * @Version TODO
+ */
+public class StackActivity extends AppCompatActivity {
+
     public static void actionStart(Context context) {
-        Intent starter = new Intent(context, LeetCodeEntryActivity.class);
+        Intent starter = new Intent(context, StackActivity.class);
         context.startActivity(starter);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_leet_code_entry);
+        setContentView(R.layout.activity_stack);
         ButterKnife.bind(this);
     }
 
     @OnClick(R.id.btn_test1)
     public void onBtnTest1Clicked() {
-        LinkedListActivity.actionStart(this);
+        // 自定义顺序栈
+        StackBasedArray.main(null);
     }
 
     @OnClick(R.id.btn_test2)
     public void onBtnTest2Clicked() {
-        StackActivity.actionStart(this);
+        // 自定义链表栈
+        StackBasedLinkedList.main(null);
     }
 
     @OnClick(R.id.btn_test3)
