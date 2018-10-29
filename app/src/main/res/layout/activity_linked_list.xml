@@ -25,6 +25,16 @@
             style="@style/btn_style_lower"
             android:text="合并两个有序链表"/>
 
+        <Button
+            android:id="@+id/btn_test4"
+            style="@style/btn_style_lower"
+            android:text="移除单向链表的倒数第n个结点"/>
+
+        <Button
+            android:id="@+id/btn_test5"
+            style="@style/btn_style_lower"
+            android:text="求单向链表的中间结点"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

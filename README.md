@@ -24,4 +24,6 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 
 4、合并两个有序链表
 
-5、
+5、删除链表倒数第 n 个结点
+
+6、求单向链表的中间结点
