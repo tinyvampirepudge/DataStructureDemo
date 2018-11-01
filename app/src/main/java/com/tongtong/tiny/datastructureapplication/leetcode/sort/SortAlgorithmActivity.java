@@ -68,7 +68,7 @@ public class SortAlgorithmActivity extends AppCompatActivity {
 
         int[] a1 = generateRandomArray(10, 100);
         System.out.println(getArrayToString(a1));
-        bubbleSortOptimize(a1,10);
+        bubbleSortOptimize(a1, 10);
         System.out.println(getArrayToString(a1));
     }
 
@@ -122,7 +122,36 @@ public class SortAlgorithmActivity extends AppCompatActivity {
      */
     @OnClick(R.id.btn_test2)
     public void onBtnTest2Clicked() {
+        int[] a = generateRandomArray(10, 100);
+        System.out.println(getArrayToString(a));
+        insertSort(a, 10);
+        System.out.println(getArrayToString(a));
+        System.out.println();
+    }
 
+    /**
+     * 插入排序
+     * 将数据插入到有序数组中。
+     *
+     * @param a
+     * @param n
+     */
+    public void insertSort(int[] a, int n) {
+        if (n <= 1) return;
+
+        for (int i = 1; i < n; i++) {
+            int value = a[i];
+            int j = i - 1;
+            // 查找插入的位置
+            for (; j >= 0; j--) {
+                if (a[j] > value) {
+                    a[j + 1] = a[j];// 数据移动
+                } else {
+                    break;
+                }
+            }
+            a[j + 1] = value;// 插入数据
+        }
     }
 
     /**
