@@ -39,3 +39,11 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 1、顺序队列、链式队列
 
 2、循环队列
+
+四、排序算法
+
+1、冒泡排序
+
+2、插入排序
+
+3、选择排序
