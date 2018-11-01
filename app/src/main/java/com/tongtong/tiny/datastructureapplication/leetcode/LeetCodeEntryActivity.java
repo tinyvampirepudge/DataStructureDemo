@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.tongtong.tiny.datastructureapplication.R;
 import com.tongtong.tiny.datastructureapplication.leetcode.linkedlist.LinkedListActivity;
 import com.tongtong.tiny.datastructureapplication.leetcode.queue.QueueActivity;
+import com.tongtong.tiny.datastructureapplication.leetcode.sort.SortAlgorithmActivity;
 import com.tongtong.tiny.datastructureapplication.leetcode.stack.StackActivity;
 
 /**
@@ -45,5 +46,10 @@ public class LeetCodeEntryActivity extends AppCompatActivity {
     @OnClick(R.id.btn_test3)
     public void onBtnTest3Clicked() {
         QueueActivity.actionStart(this);
+    }
+
+    @OnClick(R.id.btn_test4)
+    public void onBtnTest4Clicked() {
+        SortAlgorithmActivity.actionStart(this);
     }
 }
