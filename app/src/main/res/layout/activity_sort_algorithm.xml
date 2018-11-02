@@ -8,23 +8,40 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_test1"
             style="@style/btn_style_lower"
-            android:text="冒泡排序"/>
+            android:text="冒泡排序" />
 
         <Button
             android:id="@+id/btn_test2"
             style="@style/btn_style_lower"
-            android:text="插入排序"/>
+            android:text="插入排序" />
 
         <Button
             android:id="@+id/btn_test3"
             style="@style/btn_style_lower"
-            android:text="选择排序"/>
+            android:text="选择排序" />
+
+        <Button
+            android:id="@+id/btn_test4"
+            style="@style/btn_style_lower"
+            android:text="冒泡、插入、选择排序算法实测" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="冒泡、插入、选择排序算法实测结果："/>
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp" />
 
     </LinearLayout>
 
