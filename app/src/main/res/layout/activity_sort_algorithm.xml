@@ -31,15 +31,25 @@
                 android:text="选择排序" />
 
             <Button
+                android:id="@+id/btn_test5"
+                style="@style/btn_style_lower"
+                android:text="归并排序(Merge Sort)" />
+
+            <Button
+                android:id="@+id/btn_test6"
+                style="@style/btn_style_lower"
+                android:text="快速排序(Quick Sort)" />
+
+            <Button
                 android:id="@+id/btn_test4"
                 style="@style/btn_style_lower"
-                android:text="冒泡、插入、选择排序算法实测" />
+                android:text="排序算法实测" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="冒泡、插入、选择排序算法实测结果：" />
+                android:text="冒泡、插入、选择、归并、快速排序算法实测结果：" />
 
             <TextView
                 android:id="@+id/tv_sort_result1"
@@ -49,16 +59,6 @@
                 android:background="@drawable/bg_tv"
                 android:minHeight="150dp"
                 android:padding="15dp" />
-
-            <Button
-                android:id="@+id/btn_test5"
-                style="@style/btn_style_lower"
-                android:text="归并排序(Merge Sort)" />
-
-            <Button
-                android:id="@+id/btn_test6"
-                style="@style/btn_style_lower"
-                android:text="快速排序(Quick Sort)" />
 
         </LinearLayout>
     </ScrollView>

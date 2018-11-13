@@ -123,41 +123,6 @@ public class SortAlgorithmActivity extends AppCompatActivity {
 
     }
 
-    private String getSortTestResult1() {
-        System.out.println("getSortTestResult1 Thread.currentThread():" + Thread.currentThread());
-        int size = 50000;
-        int[] a = SortUtils.generateRandomArray(size, 10000);
-
-        int[] a1 = new int[size];
-        System.arraycopy(a, 0, a1, 0, a.length);
-        int[] a2 = new int[size];
-        System.arraycopy(a, 0, a2, 0, a.length);
-        int[] a3 = new int[size];
-        System.arraycopy(a, 0, a3, 0, a.length);
-
-        long startTime1 = System.currentTimeMillis();
-        BubbleSort.bubbleSort(a1, size);
-        long endTime1 = System.currentTimeMillis();
-        String result1 = "冒泡排序开始时间:" + startTime1 + ",结束时间:" + endTime1 + ",总耗时:" + (endTime1 - startTime1);
-        System.out.println(result1);
-        System.out.println();
-
-        long startTime2 = System.currentTimeMillis();
-        InsertSort.insertSort(a2, size);
-        long endTime2 = System.currentTimeMillis();
-        String result2 = "插入排序开始时间:" + startTime2 + ",结束时间:" + endTime2 + ",总耗时:" + (endTime2 - startTime2);
-        System.out.println(result2);
-        System.out.println();
-
-        long startTime3 = System.currentTimeMillis();
-        SelectSort.selectSort(a3, size);
-        long endTime3 = System.currentTimeMillis();
-        String result3 = "选择排序开始时间:" + startTime3 + ",结束时间:" + endTime3 + ",总耗时:" + (endTime3 - startTime3);
-        System.out.println(result3);
-        System.out.println();
-
-        return "随机数数组大小为:" + size + "\n" + result1 + "\n" + result2 + "\n" + result3;
-    }
 
     /**
      * 归并排序
@@ -188,6 +153,64 @@ public class SortAlgorithmActivity extends AppCompatActivity {
         QuickSort.quickSort(a, size);
         System.out.println(SortUtils.getArrayToString(a));
         System.out.println();
+    }
+
+    /**
+     * 各种算法性能比较
+     *
+     * @return
+     */
+    private String getSortTestResult1() {
+        System.out.println("getSortTestResult1 Thread.currentThread():" + Thread.currentThread());
+        int size = 50000;
+        int[] a = SortUtils.generateRandomArray(size, 10000);
+
+        int[] a1 = new int[size];
+        System.arraycopy(a, 0, a1, 0, a.length);
+        long startTime1 = System.currentTimeMillis();
+        BubbleSort.bubbleSort(a1, size);
+        long endTime1 = System.currentTimeMillis();
+        String result1 = "冒泡排序开始时间:" + startTime1 + ",结束时间:" + endTime1 + ",总耗时:" + (endTime1 - startTime1);
+        System.out.println(result1);
+        System.out.println();
+
+        int[] a2 = new int[size];
+        System.arraycopy(a, 0, a2, 0, a.length);
+        long startTime2 = System.currentTimeMillis();
+        InsertSort.insertSort(a2, size);
+        long endTime2 = System.currentTimeMillis();
+        String result2 = "插入排序开始时间:" + startTime2 + ",结束时间:" + endTime2 + ",总耗时:" + (endTime2 - startTime2);
+        System.out.println(result2);
+        System.out.println();
+
+        int[] a3 = new int[size];
+        System.arraycopy(a, 0, a3, 0, a.length);
+        long startTime3 = System.currentTimeMillis();
+        SelectSort.selectSort(a3, size);
+        long endTime3 = System.currentTimeMillis();
+        String result3 = "选择排序开始时间:" + startTime3 + ",结束时间:" + endTime3 + ",总耗时:" + (endTime3 - startTime3);
+        System.out.println(result3);
+        System.out.println();
+
+        int[] a4 = new int[size];
+        System.arraycopy(a, 0, a4, 0, a.length);
+        long startTime4 = System.currentTimeMillis();
+        MergeSort.mergeSort(a4, size);
+        long endTime4 = System.currentTimeMillis();
+        String result4 = "归并排序开始时间:" + startTime4 + ",结束时间:" + endTime4 + ",总耗时:" + (endTime4 - startTime4);
+        System.out.println(result4);
+        System.out.println();
+
+        int[] a5 = new int[size];
+        System.arraycopy(a, 0, a5, 0, a.length);
+        long startTime5 = System.currentTimeMillis();
+        QuickSort.quickSort(a5, size);
+        long endTime5 = System.currentTimeMillis();
+        String result5 = "快速排序开始时间:" + startTime5 + ",结束时间:" + endTime5 + ",总耗时:" + (endTime5 - startTime5);
+        System.out.println(result5);
+        System.out.println();
+
+        return "随机数数组大小为:" + size + "\n" + result1 + "\n" + result2 + "\n" + result3 + "\n" + result4 + "\n" + result5;
     }
 
 }
