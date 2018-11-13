@@ -55,21 +55,6 @@
                 style="@style/btn_style_lower"
                 android:text="归并排序(Merge Sort)" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:text="归并排序算法实测结果：" />
-
-            <TextView
-                android:id="@+id/tv_sort_result2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/bg_tv"
-                android:minHeight="50dp"
-                android:padding="15dp" />
-
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
