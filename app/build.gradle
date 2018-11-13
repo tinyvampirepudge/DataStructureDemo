@@ -42,11 +42,11 @@ dependencies {
 //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     //butterknife
-    compile "com.jakewharton:butterknife:$rootProject.ext.dependencies.butterknife"
+    api "com.jakewharton:butterknife:$rootProject.ext.dependencies.butterknife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.dependencies.butterknife"
 
     //circle image view
-    compile 'de.hdodenhof:circleimageview:2.1.0'
+    api 'de.hdodenhof:circleimageview:2.1.0'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.5.0'

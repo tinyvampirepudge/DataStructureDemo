@@ -6,43 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".leetcode.sort.SortAlgorithmActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_test1"
-            style="@style/btn_style_lower"
-            android:text="冒泡排序" />
-
-        <Button
-            android:id="@+id/btn_test2"
-            style="@style/btn_style_lower"
-            android:text="插入排序" />
-
-        <Button
-            android:id="@+id/btn_test3"
-            style="@style/btn_style_lower"
-            android:text="选择排序" />
-
-        <Button
-            android:id="@+id/btn_test4"
-            style="@style/btn_style_lower"
-            android:text="冒泡、插入、选择排序算法实测" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="冒泡、插入、选择排序算法实测结果："/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp" />
+            <Button
+                android:id="@+id/btn_test1"
+                style="@style/btn_style_lower"
+                android:text="冒泡排序" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_test2"
+                style="@style/btn_style_lower"
+                android:text="插入排序" />
 
+            <Button
+                android:id="@+id/btn_test3"
+                style="@style/btn_style_lower"
+                android:text="选择排序" />
+
+            <Button
+                android:id="@+id/btn_test4"
+                style="@style/btn_style_lower"
+                android:text="冒泡、插入、选择排序算法实测" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="冒泡、插入、选择排序算法实测结果：" />
+
+            <TextView
+                android:id="@+id/tv_sort_result1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_tv"
+                android:minHeight="150dp"
+                android:padding="15dp" />
+
+            <Button
+                android:id="@+id/btn_test5"
+                style="@style/btn_style_lower"
+                android:text="归并排序(Merge Sort)" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="归并排序算法实测结果：" />
+
+            <TextView
+                android:id="@+id/tv_sort_result2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_tv"
+                android:minHeight="50dp"
+                android:padding="15dp" />
+
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
