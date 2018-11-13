@@ -55,6 +55,11 @@
                 style="@style/btn_style_lower"
                 android:text="归并排序(Merge Sort)" />
 
+            <Button
+                android:id="@+id/btn_test6"
+                style="@style/btn_style_lower"
+                android:text="快速排序(Quick Sort)" />
+
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

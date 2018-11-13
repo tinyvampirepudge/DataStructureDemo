@@ -74,7 +74,6 @@ public class SortAlgorithmActivity extends AppCompatActivity {
     }
 
 
-
     /**
      * 选择排序
      */
@@ -173,6 +172,20 @@ public class SortAlgorithmActivity extends AppCompatActivity {
         System.out.println("归并排序：");
         System.out.println(SortUtils.getArrayToString(a));
         MergeSort.mergeSort(a, size);
+        System.out.println(SortUtils.getArrayToString(a));
+        System.out.println();
+    }
+
+    @OnClick(R.id.btn_test6)
+    public void onBtnTest6Clicked() {
+        int size = 10;
+        if (size <= 0) {
+            throw new IllegalArgumentException("size cannot bo lower than 0");
+        }
+        int[] a = SortUtils.generateRandomArray(size, 100);
+        System.out.println("快速排序：");
+        System.out.println(SortUtils.getArrayToString(a));
+        QuickSort.quickSort(a, size);
         System.out.println(SortUtils.getArrayToString(a));
         System.out.println();
     }
