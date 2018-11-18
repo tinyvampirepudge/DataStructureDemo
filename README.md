@@ -49,3 +49,5 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 3、选择排序
 
 4、归并排序
+
+5、快速排序
