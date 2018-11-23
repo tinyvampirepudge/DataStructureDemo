@@ -51,3 +51,5 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 4、归并排序
 
 5、快速排序
+
+6、桶排序、计数排序，基数排序

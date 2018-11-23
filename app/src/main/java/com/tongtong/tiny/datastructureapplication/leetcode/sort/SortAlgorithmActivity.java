@@ -92,7 +92,7 @@ public class SortAlgorithmActivity extends AppCompatActivity {
     @OnClick(R.id.btn_test4)
     public void onBtnTest4Clicked() {
         Observable.create((ObservableOnSubscribe<String>) emitter -> {
-            emitter.onNext(getSortTestResult1());
+            emitter.onNext(getSortTestResult());
             emitter.onComplete();
         })
                 .subscribeOn(Schedulers.computation())
@@ -155,15 +155,39 @@ public class SortAlgorithmActivity extends AppCompatActivity {
         System.out.println();
     }
 
+    @OnClick(R.id.btn_test7)
+    public void onBtnTest7Clicked() {
+        int size = 20;
+        if (size <= 0) {
+            throw new IllegalArgumentException("size cannot bo lower than 0");
+        }
+        int[] a = SortUtils.generateRandomArray(size, 10);
+        System.out.println("计数排序：");
+        System.out.println(SortUtils.getArrayToString(a));
+        CountingSort.countingSort(a, size);
+        System.out.println(SortUtils.getArrayToString(a));
+        System.out.println();
+    }
+
     /**
      * 各种算法性能比较
      *
      * @return
      */
-    private String getSortTestResult1() {
-        System.out.println("getSortTestResult1 Thread.currentThread():" + Thread.currentThread());
+    private String getSortTestResult() {
+        return getSortTestResultWithBounds(10000);
+    }
+
+    /**
+     * 各种算法性能比较
+     *
+     * @param bounds
+     * @return
+     */
+    private String getSortTestResultWithBounds(int bounds) {
+        System.out.println("getSortTestResult Thread.currentThread():" + Thread.currentThread());
         int size = 50000;
-        int[] a = SortUtils.generateRandomArray(size, 10000);
+        int[] a = SortUtils.generateRandomArray(size, bounds);
 
         int[] a1 = new int[size];
         System.arraycopy(a, 0, a1, 0, a.length);
