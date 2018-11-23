@@ -53,3 +53,7 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 5、快速排序
 
 6、桶排序、计数排序，基数排序
+
+五、查找算法
+
+1、二分查找

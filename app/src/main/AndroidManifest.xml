@@ -71,6 +71,7 @@
         <activity
             android:name=".leetcode.sort.SortAlgorithmActivity"
             android:label="常见的排序算法" />
+        <activity android:name=".leetcode.search.SearchAlgorithmActivity"></activity>
     </application>
 
 </manifest>

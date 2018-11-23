@@ -31,6 +31,11 @@
             style="@style/btn_style_lower"
             android:text="排序算法"/>
 
+        <Button
+            android:id="@+id/btn_test5"
+            style="@style/btn_style_lower"
+            android:text="查找算法"/>
+
     </LinearLayout>
 
 </ScrollView>
