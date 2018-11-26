@@ -61,4 +61,12 @@ public class SearchAlgorithmActivity extends AppCompatActivity {
         System.out.println("二分查找结果，value:" + value + ", result:" + +result);
         System.out.println();
     }
+
+    @OnClick(R.id.btn_test3)
+    public void onBtnTest3Clicked() {
+        int value = 9;
+        int accurency = 6;
+        double result = BinarySearch.sqrt(9, 6);
+        System.out.println("二分查找求解平方根结果，value:" + value + ", result:" + +result);
+    }
 }

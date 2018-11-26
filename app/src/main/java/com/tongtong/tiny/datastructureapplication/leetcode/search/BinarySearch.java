@@ -1,5 +1,7 @@
 package com.tongtong.tiny.datastructureapplication.leetcode.search;
 
+import com.tongtong.tiny.datastructureapplication.util.LogUtils;
+
 /**
  * @Description: 二分查找
  * @Author wangjianzhou@qding.me
@@ -59,5 +61,34 @@ public class BinarySearch {
         } else {
             return binarySearchInternally(a, low, mid - 1, value);
         }
+    }
+
+    /**
+     * 二分查找求解平方根。
+     *
+     * @param value
+     * @param length
+     * @return
+     */
+    public static double sqrt(double value, int length) {
+        double low = 0;
+        double high = value;
+        double accuracy = 1d;
+        for (int i = 0; i < length; i++) {
+            accuracy /= 10d;
+        }
+        LogUtils.e("sqrt", "accuracy：" + accuracy);
+        double mid = low + ((high - low) / 2);
+        while (Math.abs(low - high) >= (accuracy)) {
+            if (mid * mid > value) {
+                high = mid;
+            } else if (mid * mid < value) {
+                low = mid;
+            } else if (Math.abs(mid * mid - value) < accuracy) {
+                return mid;
+            }
+            mid = low + ((high - low) / 2);
+        }
+        return mid;
     }
 }
