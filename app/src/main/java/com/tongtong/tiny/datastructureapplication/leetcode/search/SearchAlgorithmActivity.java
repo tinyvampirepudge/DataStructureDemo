@@ -65,7 +65,7 @@ public class SearchAlgorithmActivity extends AppCompatActivity {
         int value = 2;
         double precision = 1.0E-6;
         int digits = 6;
-        double result = BinarySearch.sqrt(value, precision, digits);
+        double result = BinarySearch.sqrtByBinarySearch(value, precision, digits);
         System.out.println("二分查找求解平方根结果，value:" + value + ", result:" + +result);
         System.out.println("二分查找求解平方根结果，value:" + value + ",precision:" + precision + ",digits:" + digits + ", \nresult:" + +result);
     }
@@ -76,12 +76,24 @@ public class SearchAlgorithmActivity extends AppCompatActivity {
         double precision = 1.0E-6;
         int digits = 6;
 
-        double result = BinarySearch.NewtonRaphsonSqrt(value, precision, digits);
+        double result = BinarySearch.sqrtByNewtonRaphson(value, precision, digits);
         System.out.println("牛顿迭代法求解平方根结果，value:" + value + ",precision:" + precision + ",digits:" + digits + ", \nresult:" + +result);
     }
 
     @OnClick(R.id.btn_test4)
     public void onBtnTest4Clicked() {
+        int size = 20;
+        int value = 0;
+        int[] a = new int[size];
+        for (int i = 0; i < size / 2; i++) {
+            a[i * 2] = i;
+            a[i * 2 + 1] = i;
+        }
+
+        System.out.println("二分查找数据:" + SearchUtils.getArrayToString(a));
+        int result = BinarySearch.binarySearchVarient1(a, size, value);
+        System.out.println("二分查找结果，value:" + value + ", result:" + +result);
+        System.out.println();
     }
 
     @OnClick(R.id.btn_test5)

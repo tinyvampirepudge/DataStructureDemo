@@ -72,7 +72,7 @@ public class BinarySearch {
      * @param precision
      * @return
      */
-    public static double sqrt(double value, double precision, int digits) {
+    public static double sqrtByBinarySearch(double value, double precision, int digits) {
         if (value < 0 || Double.isNaN(value)) {
             return Double.NaN;
         }
@@ -138,18 +138,18 @@ public class BinarySearch {
      * @param a a value.
      * @return the positive square root of {@code a}.
      */
-    /*public static native double sqrt(double a);*/
+    /*public static native double sqrtByBinarySearch(double a);*/
 
     /**
      * 牛顿迭代法求解平方根。
-     * 极端值处理参考Math.sqrt(double v)；
+     * 极端值处理参考Math.sqrtByBinarySearch(double v)；
      *
      * @param value
      * @param precision 精确度。
      * @param digits    保留的小数点位数
      * @return
      */
-    public static double NewtonRaphsonSqrt(double value, double precision, int digits) {
+    public static double sqrtByNewtonRaphson(double value, double precision, int digits) {
         if (value < 0 || Double.isNaN(value)) {
             return Double.NaN;
         }
@@ -191,4 +191,32 @@ public class BinarySearch {
         return result;
     }
 
+    /**
+     * 查找第一个值等于给定值的元素
+     * 存在重复值。
+     *
+     * @param a
+     * @param n
+     * @param value
+     * @return
+     */
+    public static int binarySearchVarient1(int[] a, int n, int value) {
+        int low = 0;
+        int high = n - 1;
+        while (low <= high) {
+            int mid = low + ((high - low) >> 1);
+            if (a[mid] > value) {
+                high = mid - 1;
+            } else if (a[mid] < value) {
+                low = mid + 1;
+            } else {
+                if ((mid == 0) || (a[mid - 1] != value)) {
+                    return mid;
+                } else {
+                    high = mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
 }
