@@ -90,14 +90,26 @@ public class SearchAlgorithmActivity extends AppCompatActivity {
             a[i * 2 + 1] = i;
         }
 
-        System.out.println("二分查找数据:" + SearchUtils.getArrayToString(a));
+        System.out.println("查找第一个值等于给定值的元素:" + SearchUtils.getArrayToString(a));
         int result = BinarySearch.binarySearchVarient1(a, size, value);
-        System.out.println("二分查找结果，value:" + value + ", result:" + +result);
+        System.out.println("查找第一个值等于给定值的元素，value:" + value + ", result:" + +result);
         System.out.println();
     }
 
     @OnClick(R.id.btn_test5)
     public void onBtnTest5Clicked() {
+        int size = 20;
+        int value = 0;
+        int[] a = new int[size];
+        for (int i = 0; i < size / 2; i++) {
+            a[i * 2] = i;
+            a[i * 2 + 1] = i;
+        }
+
+        System.out.println("查找最后一个值等于给定值的元素:" + SearchUtils.getArrayToString(a));
+        int result = BinarySearch.binarySearchVarient2(a, size, value);
+        System.out.println("查找最后一个值等于给定值的元素，value:" + value + ", result:" + +result);
+        System.out.println();
     }
 
     @OnClick(R.id.btn_test6)
