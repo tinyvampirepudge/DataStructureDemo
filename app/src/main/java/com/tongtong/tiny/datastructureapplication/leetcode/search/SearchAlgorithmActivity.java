@@ -114,9 +114,33 @@ public class SearchAlgorithmActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_test6)
     public void onBtnTest6Clicked() {
+        int size = 20;
+        int step = 2;
+        int value = 10;
+        if (size <= 0) {
+            throw new IllegalArgumentException("size cannot bo lower than 0");
+        }
+        int[] a = SearchUtils.generateArrayWithStep(size, step);
+
+        System.out.println("查找第一个大于等于给定值的元素:" + SearchUtils.getArrayToString(a));
+        int result = BinarySearch.binarySearchVarient3(a, size, value);
+        System.out.println("查找第一个大于等于给定值的元素，value:" + value + ", result:" + +result);
+        System.out.println();
     }
 
     @OnClick(R.id.btn_test7)
     public void onBtnTest7Clicked() {
+        int size = 20;
+        int step = 2;
+        int value = 10;
+        if (size <= 0) {
+            throw new IllegalArgumentException("size cannot bo lower than 0");
+        }
+        int[] a = SearchUtils.generateArrayWithStep(size, step);
+
+        System.out.println("查找最后一个小于等于给定值的元素:" + SearchUtils.getArrayToString(a));
+        int result = BinarySearch.binarySearchVarient4(a, size, value);
+        System.out.println("查找最后一个小于等于给定值的元素，value:" + value + ", result:" + +result);
+        System.out.println();
     }
 }
