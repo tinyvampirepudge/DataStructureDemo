@@ -2,6 +2,8 @@ package com.tongtong.tiny.datastructureapplication.leetcode.search;
 
 import com.tongtong.tiny.datastructureapplication.util.LogUtils;
 
+import java.text.DecimalFormat;
+
 /**
  * @Description: 二分查找
  * @Author wangjianzhou@qding.me
@@ -64,31 +66,129 @@ public class BinarySearch {
     }
 
     /**
-     * 二分查找求解平方根。
+     * 二分查找求解平方根。代码有问题。
      *
      * @param value
-     * @param length
+     * @param precision
      * @return
      */
-    public static double sqrt(double value, int length) {
+    public static double sqrt(double value, double precision, int digits) {
+        if (value < 0 || Double.isNaN(value)) {
+            return Double.NaN;
+        }
+
+        if (value == Double.POSITIVE_INFINITY) {
+            return value;
+        }
+
+        if (value == 0.0 || value == -0.0) {
+            return value;
+        }
+
         double low = 0;
         double high = value;
-        double accuracy = 1d;
-        for (int i = 0; i < length; i++) {
-            accuracy /= 10d;
-        }
-        LogUtils.e("sqrt", "accuracy：" + accuracy);
+
         double mid = low + ((high - low) / 2);
-        while (Math.abs(low - high) >= (accuracy)) {
+        while (Math.abs(low - high) >= (precision)) {
             if (mid * mid > value) {
                 high = mid;
             } else if (mid * mid < value) {
                 low = mid;
-            } else if (Math.abs(mid * mid - value) < accuracy) {
+            } else if (Math.abs(mid * mid - value) < precision) {
                 return mid;
             }
             mid = low + ((high - low) / 2);
         }
+
+        /**
+         * 默认保留两位小数
+         */
+        if (digits < 0) {
+            digits = 2;
+        }
+        if (digits > 0) {
+            StringBuilder sb = new StringBuilder("#.");
+            for (int i = 0; i < digits; i++) {
+                sb.append("#");
+            }
+            DecimalFormat df = new DecimalFormat(sb.toString());
+            mid = Double.valueOf(df.format(mid));
+        }
+
+        if (mid == (int) mid) {
+            mid = (int) mid;
+        }
+
         return mid;
     }
+
+    /**
+     * Returns the correctly rounded positive square root of a
+     * {@code double} value.
+     * Special cases:
+     * <ul><li>If the argument is NaN or less than zero, then the result
+     * is NaN.
+     * <li>If the argument is positive infinity, then the result is positive
+     * infinity.
+     * <li>If the argument is positive zero or negative zero, then the
+     * result is the same as the argument.</ul>
+     * Otherwise, the result is the {@code double} value closest to
+     * the true mathematical square root of the argument value.
+     *
+     * @param a a value.
+     * @return the positive square root of {@code a}.
+     */
+    /*public static native double sqrt(double a);*/
+
+    /**
+     * 牛顿迭代法求解平方根。
+     * 极端值处理参考Math.sqrt(double v)；
+     *
+     * @param value
+     * @param precision 精确度。
+     * @param digits    保留的小数点位数
+     * @return
+     */
+    public static double NewtonRaphsonSqrt(double value, double precision, int digits) {
+        if (value < 0 || Double.isNaN(value)) {
+            return Double.NaN;
+        }
+
+        if (value == Double.POSITIVE_INFINITY) {
+            return value;
+        }
+
+        if (value == 0.0 || value == -0.0) {
+            return value;
+        }
+
+        double result = value;
+        double last;
+        do {
+            last = result;
+            result = (result + value / result) / 2;
+        } while (Math.abs(result - last) > precision);
+
+        /**
+         * 默认保留两位小数
+         */
+        if (digits < 0) {
+            digits = 2;
+        }
+        if (digits > 0) {
+            StringBuilder sb = new StringBuilder("#.");
+            for (int i = 0; i < digits; i++) {
+                sb.append("#");
+            }
+            DecimalFormat df = new DecimalFormat(sb.toString());
+            result = Double.valueOf(df.format(result));
+        }
+
+        if (result == (int) result) {
+            result = (int) result;
+        }
+
+        return result;
+    }
+
 }

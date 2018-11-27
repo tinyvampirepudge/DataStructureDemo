@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tongtong.tiny.datastructureapplication.R;
-import com.tongtong.tiny.datastructureapplication.leetcode.sort.CountingSort;
-import com.tongtong.tiny.datastructureapplication.leetcode.sort.SortUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -64,9 +62,37 @@ public class SearchAlgorithmActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_test3)
     public void onBtnTest3Clicked() {
-        int value = 9;
-        int accurency = 6;
-        double result = BinarySearch.sqrt(9, 6);
+        int value = 2;
+        double precision = 1.0E-6;
+        int digits = 6;
+        double result = BinarySearch.sqrt(value, precision, digits);
         System.out.println("二分查找求解平方根结果，value:" + value + ", result:" + +result);
+        System.out.println("二分查找求解平方根结果，value:" + value + ",precision:" + precision + ",digits:" + digits + ", \nresult:" + +result);
+    }
+
+    @OnClick(R.id.btn_test31)
+    public void onBtnTest31Clicked() {
+        double value = 2;
+        double precision = 1.0E-6;
+        int digits = 6;
+
+        double result = BinarySearch.NewtonRaphsonSqrt(value, precision, digits);
+        System.out.println("牛顿迭代法求解平方根结果，value:" + value + ",precision:" + precision + ",digits:" + digits + ", \nresult:" + +result);
+    }
+
+    @OnClick(R.id.btn_test4)
+    public void onBtnTest4Clicked() {
+    }
+
+    @OnClick(R.id.btn_test5)
+    public void onBtnTest5Clicked() {
+    }
+
+    @OnClick(R.id.btn_test6)
+    public void onBtnTest6Clicked() {
+    }
+
+    @OnClick(R.id.btn_test7)
+    public void onBtnTest7Clicked() {
     }
 }

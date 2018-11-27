@@ -57,3 +57,6 @@ gitee传送门 [https://gitee.com/tinytongtong/DataStructureDemo](https://gitee.
 五、查找算法
 
 1、二分查找
+①求一个数的平方根，精确到小数点后六位。二分查找实现，牛顿迭代法实现。
+②
+③

@@ -24,7 +24,32 @@
         <Button
             android:id="@+id/btn_test3"
             style="@style/btn_style_lower"
-            android:text="求一个数的平方根，精确到小数点后六位" />
+            android:text="求一个数的平方根，精确到小数点后六位。二分查找。" />
+
+        <Button
+            android:id="@+id/btn_test31"
+            style="@style/btn_style_lower"
+            android:text="求一个数的平方根，精确到小数点后六位。牛顿迭代法" />
+
+        <Button
+            android:id="@+id/btn_test4"
+            style="@style/btn_style_lower"
+            android:text="二分查找变体1（有序数据集合中存在重复的数据，查找第一个值等于给定值的元素）" />
+
+        <Button
+            android:id="@+id/btn_test5"
+            style="@style/btn_style_lower"
+            android:text="二分查找变体2（有序数据集合中存在重复的数据，查找最后一个值等于给定值的元素）" />
+
+        <Button
+            android:id="@+id/btn_test6"
+            style="@style/btn_style_lower"
+            android:text="二分查找变体3（有序数据集合中存在重复的数据，查找第一个大于等于给定值的元素）" />
+
+        <Button
+            android:id="@+id/btn_test7"
+            style="@style/btn_style_lower"
+            android:text="二分查找变体4（有序数据集合中存在重复的数据，查找最后一个小于等于给定值的元素）" />
 
     </LinearLayout>
 
