@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tongtong.tiny.datastructureapplication.R;
+import com.tongtong.tiny.datastructureapplication.leetcode.hash.HashAlgorithmTest;
 import com.tongtong.tiny.datastructureapplication.leetcode.linkedlist.LinkedListActivity;
 import com.tongtong.tiny.datastructureapplication.leetcode.queue.QueueActivity;
 import com.tongtong.tiny.datastructureapplication.leetcode.search.SearchAlgorithmActivity;
 import com.tongtong.tiny.datastructureapplication.leetcode.sort.SortAlgorithmActivity;
 import com.tongtong.tiny.datastructureapplication.leetcode.stack.StackActivity;
+import com.tongtong.tiny.datastructureapplication.leetcode.tree.BinaryTreeActivity;
 
 /**
  * @Description: LeetCode练习
@@ -57,5 +59,15 @@ public class LeetCodeEntryActivity extends AppCompatActivity {
     @OnClick(R.id.btn_test5)
     public void onBtnTest5Clicked() {
         SearchAlgorithmActivity.actionStart(this);
+    }
+
+    @OnClick(R.id.btn_test6)
+    public void onBtnTest6Clicked() {
+        HashAlgorithmTest.main(null);
+    }
+
+    @OnClick(R.id.btn_test7)
+    public void onBtnTest7Clicked() {
+        BinaryTreeActivity.actionStart(this);
     }
 }
